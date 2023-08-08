@@ -39,7 +39,7 @@ class ProductManager {
         this.readFile();
         let product = this.products.find(prod => prod.id == id);
         let keys = Object.keys(update);
-        keys.map(key => key !== 'id' && (product[key] = update[hey]));
+        keys.map(key => key !== 'id' && (product[key] = update[key]));
         let writeProducts = JSON.stringify(this.products);
         fs.writeFileSync(this.path, writeProducts);
     }
@@ -142,4 +142,4 @@ manager.deleteProduct(3);
 manager.updateProducts(2, {title:  'remera', stock: 12, id: 3});
 //mostrar productos
 products = manager.getProducts();
-console.log('Todos los productos: ', products);
+//console.log('Todos los productos: ', products);
